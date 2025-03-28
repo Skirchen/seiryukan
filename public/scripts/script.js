@@ -34,11 +34,14 @@ document.getElementById('contact-form').addEventListener('submit', async (event)
 window.addEventListener('scroll', () => {
     const contactButton = document.getElementById('contact-button');
     const heroSection = document.querySelector('.hero');
+    const contactSection = document.getElementById('contact');
+    const contactTop = contactSection.getBoundingClientRect().top;
     const heroBottom = heroSection.getBoundingClientRect().bottom;
 
-    if (heroBottom <= 0) {
+    if (heroBottom <= 0 && contactTop > window.innerHeight) {
         contactButton.classList.add('sticky');
     } else {
         contactButton.classList.remove('sticky');
     }
 });
+
