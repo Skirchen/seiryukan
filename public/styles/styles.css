@@ -3,6 +3,8 @@
     --primary-color: #1a1a1a; /* Main background color */
     --accent-color: #e63946; /* Highlight color for buttons and links */
     --text-color: #f4f4f4; /* Default text color */
+    --text-muted-color: #a8a8a8; /* Muted text color for less emphasis */
+    --text-highlight-color: #f1fa8c; /* Highlight color for important text */
     --background-color: #0b0b0b; /* Background color for the body */
     --font-family: 'Arial', sans-serif; /* Default font family */
 }
@@ -15,6 +17,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    line-height:1.6;
 }
 
 /* Hero section styles */
@@ -62,6 +65,8 @@ body {
 .hero-subtitle {
     font-size: clamp(1rem, 3vw, 1.5rem);
     margin-bottom: 20px;
+    color: var(--text-muted-color); /* Muted text color */
+    font-style: italic;
 }
 
 /* Call-to-action button styles */
@@ -84,7 +89,7 @@ body {
 
 /* Section styles */
 .section {
-    padding: 40px 20px;
+    padding: 0px 20px;
     text-align: center;
 }
 
@@ -127,6 +132,11 @@ body {
     box-sizing: border-box;
 }
 
+.contact-form button{
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+}
+
 /* Footer styles */
 .footer {
     background-color: var(--primary-color);
@@ -160,7 +170,7 @@ body {
 
 .sensei-details h4 {
     font-size: 1.5rem;
-    margin-top: 20px;
+    margin-top: 40px;
     margin-bottom: 10px;
 }
 
@@ -197,6 +207,15 @@ body {
     }
 }
 
+@media (max-width: 600px) {
+    .class-item{
+        background-color: var(--background-color);
+        box-shadow: none;
+        margin:0px;
+        padding: 0px;
+    }
+}
+
 /* Sticky Contact Us button styles */
 #contact-button.sticky {
     position: fixed;
@@ -205,4 +224,12 @@ body {
     z-index: 1000;
     transform: none;
     transition: all 0.3s ease;
+}
+ul{
+    padding-left: 0px;
+    text-align: left;
+}
+li{
+    list-style: none;
+    padding-left: 0px;
 }
